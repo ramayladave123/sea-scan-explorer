@@ -2,95 +2,84 @@
 @tailwind components;
 @tailwind utilities;
 
-/* SeaScan — Ocean Marine Design System
-   Colors: deep ocean blues, aqua, teal, bioluminescent accents.
+/* SeaScan — Research-grade marine AI dashboard
+   Default = dark scientific theme (deep ocean).
    All colors HSL.
 */
 
 @layer base {
   :root {
-    --background: 200 60% 97%;
-    --foreground: 215 50% 12%;
+    /* Surfaces */
+    --background: 215 60% 5%;
+    --foreground: 190 35% 92%;
 
-    --card: 0 0% 100%;
-    --card-foreground: 215 50% 12%;
+    --card: 215 50% 8%;
+    --card-foreground: 190 35% 92%;
 
-    --popover: 0 0% 100%;
-    --popover-foreground: 215 50% 12%;
+    --popover: 215 55% 7%;
+    --popover-foreground: 190 35% 92%;
 
-    /* Deep ocean primary */
-    --primary: 200 95% 32%;
-    --primary-foreground: 190 100% 97%;
-    --primary-glow: 188 90% 55%;
+    /* Brand */
+    --primary: 188 95% 55%;
+    --primary-foreground: 215 80% 6%;
+    --primary-glow: 175 90% 55%;
 
-    /* Aqua secondary */
-    --secondary: 185 75% 92%;
-    --secondary-foreground: 200 80% 20%;
+    --secondary: 210 40% 12%;
+    --secondary-foreground: 190 35% 92%;
 
-    --muted: 200 40% 94%;
-    --muted-foreground: 210 25% 40%;
+    --muted: 215 35% 12%;
+    --muted-foreground: 200 20% 60%;
 
-    /* Coral accent */
-    --accent: 175 70% 45%;
-    --accent-foreground: 195 100% 98%;
+    --accent: 165 85% 55%;
+    --accent-foreground: 215 80% 6%;
 
-    --destructive: 0 75% 55%;
+    --destructive: 0 75% 58%;
     --destructive-foreground: 0 0% 100%;
 
-    --border: 200 40% 88%;
-    --input: 200 40% 88%;
-    --ring: 188 90% 45%;
+    --border: 200 30% 16%;
+    --input: 200 30% 14%;
+    --ring: 188 95% 55%;
 
     --radius: 1rem;
 
     /* Marine palette */
-    --abyss: 215 80% 8%;
-    --deep-sea: 210 70% 15%;
-    --ocean: 200 80% 25%;
-    --teal: 180 70% 38%;
-    --aqua: 185 85% 55%;
-    --foam: 190 70% 92%;
-    --bioluminescent: 165 80% 60%;
-    --coral: 12 80% 65%;
+    --abyss: 215 80% 4%;
+    --deep-sea: 212 70% 9%;
+    --ocean: 200 70% 18%;
+    --teal: 180 70% 42%;
+    --aqua: 188 95% 60%;
+    --foam: 190 50% 92%;
+    --bioluminescent: 158 90% 60%;
+    --coral: 12 85% 65%;
+    --sand: 38 40% 78%;
+
+    /* Sidebar tokens */
+    --sidebar-background: 215 70% 5%;
+    --sidebar-foreground: 190 25% 75%;
+    --sidebar-primary: 188 95% 55%;
+    --sidebar-primary-foreground: 215 80% 6%;
+    --sidebar-accent: 210 50% 11%;
+    --sidebar-accent-foreground: 190 35% 95%;
+    --sidebar-border: 200 30% 14%;
+    --sidebar-ring: 188 95% 55%;
 
     /* Gradients */
-    --gradient-deep: linear-gradient(180deg, hsl(215 80% 8%) 0%, hsl(210 75% 18%) 50%, hsl(195 70% 30%) 100%);
-    --gradient-surface: linear-gradient(180deg, hsl(190 85% 60%) 0%, hsl(200 90% 35%) 100%);
-    --gradient-aqua: linear-gradient(135deg, hsl(188 90% 55%) 0%, hsl(175 70% 45%) 100%);
-    --gradient-glow: radial-gradient(circle at 50% 0%, hsl(188 90% 55% / 0.4), transparent 70%);
-    --gradient-card: linear-gradient(180deg, hsl(0 0% 100% / 0.85), hsl(190 60% 96% / 0.7));
-    --gradient-bio: linear-gradient(135deg, hsl(165 80% 60%) 0%, hsl(188 90% 55%) 100%);
+    --gradient-deep: linear-gradient(180deg, hsl(215 85% 4%) 0%, hsl(210 75% 10%) 50%, hsl(195 65% 18%) 100%);
+    --gradient-surface: linear-gradient(180deg, hsl(190 90% 50%) 0%, hsl(200 90% 25%) 100%);
+    --gradient-aqua: linear-gradient(135deg, hsl(188 95% 55%) 0%, hsl(165 85% 50%) 100%);
+    --gradient-glow: radial-gradient(ellipse at 50% 0%, hsl(188 95% 55% / 0.35), transparent 70%);
+    --gradient-card: linear-gradient(180deg, hsl(215 50% 10% / 0.85), hsl(212 60% 6% / 0.65));
+    --gradient-bio: linear-gradient(135deg, hsl(158 90% 60%) 0%, hsl(188 95% 55%) 100%);
+    --gradient-holo: linear-gradient(135deg, hsl(188 95% 55% / 0.18), hsl(280 80% 60% / 0.12), hsl(158 90% 60% / 0.18));
 
     /* Shadows */
-    --shadow-glow: 0 0 40px hsl(188 90% 55% / 0.35);
-    --shadow-deep: 0 20px 50px -15px hsl(215 80% 15% / 0.45);
-    --shadow-soft: 0 8px 30px -10px hsl(200 50% 30% / 0.2);
-    --shadow-bio: 0 0 30px hsl(165 80% 60% / 0.5);
+    --shadow-glow: 0 0 50px hsl(188 95% 55% / 0.35);
+    --shadow-deep: 0 25px 60px -20px hsl(215 90% 2% / 0.7);
+    --shadow-soft: 0 10px 35px -12px hsl(200 80% 5% / 0.55);
+    --shadow-bio: 0 0 40px hsl(158 90% 60% / 0.4);
+    --shadow-inner-glow: inset 0 1px 0 hsl(190 100% 95% / 0.06);
 
     --transition-smooth: cubic-bezier(0.4, 0, 0.2, 1);
-  }
-
-  .dark {
-    --background: 215 50% 6%;
-    --foreground: 190 50% 95%;
-    --card: 215 45% 10%;
-    --card-foreground: 190 50% 95%;
-    --popover: 215 45% 10%;
-    --popover-foreground: 190 50% 95%;
-    --primary: 188 90% 55%;
-    --primary-foreground: 215 80% 8%;
-    --secondary: 210 40% 15%;
-    --secondary-foreground: 190 50% 95%;
-    --muted: 210 40% 15%;
-    --muted-foreground: 200 20% 65%;
-    --accent: 175 70% 50%;
-    --accent-foreground: 215 80% 8%;
-    --destructive: 0 75% 55%;
-    --destructive-foreground: 0 0% 100%;
-    --border: 210 40% 18%;
-    --input: 210 40% 18%;
-    --ring: 188 90% 55%;
-    --gradient-card: linear-gradient(180deg, hsl(215 45% 12% / 0.9), hsl(210 50% 8% / 0.7));
   }
 }
 
@@ -99,16 +88,41 @@
   body {
     @apply bg-background text-foreground antialiased;
     font-feature-settings: "ss01", "cv11";
+    background-image:
+      radial-gradient(ellipse 80% 50% at 50% -10%, hsl(188 95% 25% / 0.18), transparent 60%),
+      radial-gradient(ellipse 60% 40% at 100% 100%, hsl(158 80% 30% / 0.12), transparent 60%);
+    background-attachment: fixed;
   }
   html { scroll-behavior: smooth; }
+
+  /* Subtle scientific grid */
+  .grid-bg {
+    background-image:
+      linear-gradient(hsl(var(--border) / 0.5) 1px, transparent 1px),
+      linear-gradient(90deg, hsl(var(--border) / 0.5) 1px, transparent 1px);
+    background-size: 48px 48px;
+    mask-image: radial-gradient(ellipse 80% 60% at 50% 50%, #000 30%, transparent 80%);
+  }
 }
 
 @layer components {
   .glass {
     background: var(--gradient-card);
-    backdrop-filter: blur(20px);
-    -webkit-backdrop-filter: blur(20px);
-    border: 1px solid hsl(var(--primary) / 0.15);
+    backdrop-filter: blur(24px) saturate(140%);
+    -webkit-backdrop-filter: blur(24px) saturate(140%);
+    border: 1px solid hsl(var(--primary) / 0.12);
+    box-shadow: var(--shadow-inner-glow);
+  }
+  .glass-strong {
+    background: linear-gradient(180deg, hsl(215 50% 12% / 0.92), hsl(212 60% 6% / 0.85));
+    backdrop-filter: blur(32px) saturate(160%);
+    -webkit-backdrop-filter: blur(32px) saturate(160%);
+    border: 1px solid hsl(var(--primary) / 0.18);
+    box-shadow: var(--shadow-deep), var(--shadow-inner-glow);
+  }
+  .holo {
+    background: var(--gradient-holo);
+    border: 1px solid hsl(var(--primary) / 0.25);
   }
   .text-gradient {
     background: var(--gradient-aqua);
@@ -116,8 +130,18 @@
     background-clip: text;
     color: transparent;
   }
-  .bio-glow {
-    box-shadow: var(--shadow-bio);
+  .text-gradient-bio {
+    background: var(--gradient-bio);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+  .bio-glow { box-shadow: var(--shadow-bio); }
+  .hairline { border-color: hsl(var(--primary) / 0.15); }
+
+  /* Scientific data label */
+  .label-mono {
+    @apply font-mono text-[10px] uppercase tracking-[0.2em] text-muted-foreground;
   }
 }
 
@@ -125,8 +149,25 @@
   .bubble {
     position: absolute;
     border-radius: 9999px;
-    background: radial-gradient(circle at 30% 30%, hsl(190 100% 90% / 0.9), hsl(188 90% 55% / 0.2) 60%, transparent 80%);
-    border: 1px solid hsl(190 100% 95% / 0.4);
+    background: radial-gradient(circle at 30% 30%, hsl(190 100% 95% / 0.85), hsl(188 95% 60% / 0.18) 60%, transparent 80%);
+    border: 1px solid hsl(190 100% 95% / 0.3);
     pointer-events: none;
+  }
+  .caustics {
+    background-image:
+      radial-gradient(ellipse 30% 20% at 20% 30%, hsl(190 100% 90% / 0.18), transparent 60%),
+      radial-gradient(ellipse 25% 15% at 70% 60%, hsl(190 100% 90% / 0.15), transparent 60%),
+      radial-gradient(ellipse 35% 25% at 50% 80%, hsl(190 100% 90% / 0.12), transparent 60%);
+    mix-blend-mode: screen;
+  }
+  .scanline {
+    background: linear-gradient(180deg, transparent 50%, hsl(var(--primary) / 0.04) 50%);
+    background-size: 100% 4px;
+  }
+  .neural-grid {
+    background-image:
+      linear-gradient(hsl(var(--primary) / 0.15) 1px, transparent 1px),
+      linear-gradient(90deg, hsl(var(--primary) / 0.15) 1px, transparent 1px);
+    background-size: 32px 32px;
   }
 }
